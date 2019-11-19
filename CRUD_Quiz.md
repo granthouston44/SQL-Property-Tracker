@@ -21,15 +21,21 @@ Q6. Why do we put a guard (an if clause) on the @id attribute in the constructor
 To make sure that it is not nil
 
 Q7. Why are some of the CRUD actions represented by instance methods, and others by class methods?
-
+the class methods are required as some methods are beyond the scope of an instance - such as calling for all rows within the database. We don't want to require an instance to be present if we want to delete everything from the database.  
 
 Q8. What type of data structure is returned by calls to db.exec_prepared()? In the save method, how do we access the id from the returned data structure?
 
+
 Q9. Why do we use prepared statements when performing database operations?
+to protect ourselves from SQL injection attacks
+
 
 Extension Questions
 Look at the find_by_id and find_by_address methods in the Property class.
 
 Q10. What do they take in as their arguments?
+find by id takes in an integer
+find by address takes in a string
 
 Q11. What are their return values?
+returns an array containing the corresponding properties of the found result
